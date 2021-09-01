@@ -671,7 +671,7 @@ public struct PythonInterface {
     }
     
     public func `import`(_ name: String) -> PythonObject {
-        return try! attemptImport(name)
+        return try? attemptImport(name) ?? PythonObject("sys")
     }
     
     public subscript(dynamicMember name: String) -> PythonObject {
